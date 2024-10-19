@@ -1,72 +1,90 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Job Posting Board Backend
 
-## Available Scripts
+## Objective
+A full-stack MERN application where companies can register, verify their accounts via email, post jobs, and send automated emails to candidates. This project uses **MongoDB**, **Express.js**, **React.js**, and **Node.js** (MERN stack) along with **Nodemailer** for email automation.
 
-In the project directory, you can run:
+## Features
+- **Company Registration**: Companies can sign up and verify their accounts via email and mobile.
+- **Company Login**: JWT or session-based authentication for secure login.
+- **Job Posting**: Authenticated companies can post jobs including title, description, experience level, and candidate information.
+- **Email Automation**: Companies can send job alerts or updates to candidates using Nodemailer.
+- **Logout**: Token or session clearance for logout functionality.
 
-### `npm start`
+## Tech Stack
+- **Frontend**: React.js (UI built following Figma design)
+- **Backend**: Node.js, Express.js (API and business logic)
+- **Database**: MongoDB (Company details, job postings, email logs)
+- **Email Automation**: Nodemailer (for sending job-related emails)
+- **Authentication**: JWT or session-based authentication for securing routes
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Installation & Setup
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Prerequisites
+- Node.js installed (v14 or later)
+- MongoDB (local instance or Atlas cluster)
+- Git
 
-### `npm test`
+### Steps to Run the Project Locally
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/your-username/JobPortal_Backend.git
+  
+   ```
 
-### `npm run build`
+2. **Install Backend Dependencies**:
+   ```bash
+   cd backend
+   npm install
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. **Create Environment Variables**:
+   Create a `.env` file in the `backend` directory with the following details:
+   ```
+   MONGO_URI=your_mongodb_connection_string
+   JWT_SECRET=your_jwt_secret
+   EMAIL_SERVICE=your_email_service_provider
+   EMAIL_USER=your_email_user
+   EMAIL_PASS=your_email_password
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4. **Run the Backend Server**:
+   ```bash
+   npm run dev
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+5. **Install Frontend Dependencies**:
+   ```bash
+   cd ../frontend
+   npm install
+   ```
 
-### `npm run eject`
+6. **Run the Frontend**:
+   ```bash
+   npm start
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+7. **Access the Application**:
+   Open your browser and go to `http://localhost:3000`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## API Endpoints
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+| Endpoint          | Method | Description                         |
+| ----------------- | ------ | ----------------------------------- |
+| `/api/register`   | POST   | Register a company                  |
+| `/api/login`      | POST   | Login company (JWT or session)       |
+| `/api/job-posts`  | POST   | Post a job (authenticated companies) |
+| `/api/send-email` | POST   | Send job alert emails to candidates  |
+| `/api/logout`     | POST   | Logout the user                     |
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Figma Design
+The frontend UI follows the design from this [Figma link](https://www.figma.com/design/3ru768FzQDG5J6CLC1IPB4/CuvetteAssignment?node-id=0-1&t=4kRZ1x3vuXhWBiu7-1).
 
-## Learn More
+## Dependencies
+- **React**: UI Library
+- **Express.js**: Backend framework
+- **MongoDB**: NoSQL database
+- **Nodemailer**: Email sending service
+- **JWT**: Authentication token system
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# Assignment-JobPortal-Frontend
-# JobPortal_Frontend
